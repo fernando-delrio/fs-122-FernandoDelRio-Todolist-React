@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react';
-
 export const Counter = ({ taskList }) => {
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    setCounter(taskList.length);
-  }, [taskList]);
-
-  return <span>{counter} item left</span>;
+  return (
+    <div className="text-center p-3 bg-blue-100 text-blue-700 rounded-lg font-medium">
+      <span className="font-bold">{taskList.length}</span> 
+      item{taskList.length !== 1 ? 's' : ''} left
+    </div>
+  );
 };
